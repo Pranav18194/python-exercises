@@ -1,0 +1,53 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None # ini tially the linked list is empty 
+    
+    def insert (self, newNode):
+        if self.head is None:
+            self.head = newNode
+        else:
+            # head => John -->None  
+            lastNode = self.head
+            while True:
+                if lastNode.next is None:
+                    break
+                lastNode = lastNode.next
+            lastNode.next = newNode
+    
+    def insertAt (self, newNode,position):
+        currentNode = self.head
+        currentposition  = 0   
+        while True:
+            if currentposition == position:
+                previousNode.next = newNode
+                newNode.next = CurrentNode 
+                break
+            previousNode = currentNode
+            currentNode = Node.next
+            currentposition +=1
+    
+    def printList (self):
+        currentNode = self.head
+        while True:
+            if currentNode is None:
+                break
+            print(currentNode.data)
+            currentNode = currentNode.next
+
+firstNode = Node(10)
+linkedList = LinkedList()
+linkedList.insert (firstNode)
+secondNode = Node(30)
+linkedList.insert (secondNode)
+thirdNode = Node(40)
+linkedList.insert (thirdNode)
+fourthNode = Node (50)
+linkedList.insert(fourthNode)
+fifthNode = Node (20)
+linkedList.insertAt(fifthNode,1)
+linkedList.printList()
